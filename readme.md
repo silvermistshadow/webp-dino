@@ -6,7 +6,16 @@
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_A game of Hangman with a randomly picked dinosaur as the word_
+
+Hangman specs:
+
+  0. create and store a Hangman game object
+    input:   let hangman = new Hangman("Dino")
+    output: object
+  1. use letterMatch method to match a single letter in a word
+    input: "Dino", match 'o'
+    output: true
 
 ## Setup/Installation Requirements
 

@@ -3,10 +3,14 @@ export class Hangman {
     this.word = word;
   }
 
-  wordSeperator() {
-    let inputWord = this.word;
-    let wordArray = inputWord.split('');
-    console.log(wordArray);
-    return wordArray;
+  letterMatch(letter) {
+    let splitWord = this.word.split('');
+    letter = letter.toLowerCase();
+    for (let x = 0; x<splitWord.length; x++) {
+      if (splitWord.includes(letter)) {
+        return true;
+      }
+    }
   }
+  
 }
