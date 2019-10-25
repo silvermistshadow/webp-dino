@@ -1,4 +1,4 @@
-import { indexes, letterArray } from './gvars';
+import { indexes } from './gvars';
 export class Hangman {
   constructor(word) {
     this.word = word;
@@ -28,6 +28,7 @@ export class Hangman {
       for(let x=0; x<indexes.length; x++) {
         this.letterArray.push(splitWord[indexes[x]]);
       }
+      return this.letterArray;
     }
   }
 

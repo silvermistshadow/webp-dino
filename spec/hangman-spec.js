@@ -12,5 +12,11 @@ describe('Hangman', function() {
     expect(testLetterMatch).toBe(true);
   });
 
+  it('should use letterCorrect to retrieve exactly which letters are correct and their positions', function() {
+    let testLetterMatch = testWord.letterMatch("o"); //must be done in order to use the next method
+    let testLetterCorrect = testWord.letterCorrect();
+    expect(testLetterCorrect).toContain("o");
+  }) 
+
 
 })
