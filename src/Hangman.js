@@ -3,6 +3,9 @@ export class Hangman {
   constructor(word) {
     this.word = word;
     this.letterArray = new Array(this.word.length).fill("");
+    this.lettersGuessed = [];
+    this.correctLetters = 0;
+    this.gameCounter = 6;
   }
 
   letterMatch(letter) {
@@ -26,9 +29,21 @@ export class Hangman {
     if (indexes && indexes.length) {
       let splitWord = this.word.split('');
       for(let x=0; x<indexes.length; x++) {
-        this.letterArray.push(splitWord[indexes[x]]);
+        //this.letterArray.push(splitWord[indexes[x]]);
+        this.letterArray[indexes[x]] = splitWord[indexes[x]];
+        console.log(this.letterArray);
       }
       return this.letterArray;
+    }
+  }
+
+  hangJudge(letter) {
+    this.lettersGuessed.push(letter);
+    if (this.letterMatch(letter)) {
+      this.correctLetters++
+    }
+    else {
+      this.gameCounter--
     }
   }
 
