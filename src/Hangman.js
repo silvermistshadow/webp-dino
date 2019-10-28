@@ -6,6 +6,12 @@ export class Hangman {
     this.lettersGuessed = [];
     this.correctLetters = 0;
     this.gameCounter = 6;
+    this.letterAlreadyGuessed = false;
+  }
+
+  isAlreadyGuessed(letter) {
+    this.letterAlreadyGuessed = this.lettersGuessed.some(letter); 
+    return this.letterAlreadyGuessed;
   }
 
   letterMatch(letter) {
@@ -29,22 +35,24 @@ export class Hangman {
     if (indexes && indexes.length) {
       let splitWord = this.word.split('');
       for(let x=0; x<indexes.length; x++) {
-        //this.letterArray.push(splitWord[indexes[x]]);
         this.letterArray[indexes[x]] = splitWord[indexes[x]];
-        console.log(this.letterArray);
       }
       return this.letterArray;
     }
   }
 
   hangJudge(letter) {
-    this.lettersGuessed.push(letter);
-    if (this.letterMatch(letter)) {
-      this.correctLetters++
+    if (this.isAlreadyGuessed(letter) === false) {
+      this.lettersGuessed.push(letter);
+      if (this.letterMatch(letter)) {
+        this.letterCorrect();
+        this.correctLetters++
+      }
+      else {
+        this.gameCounter--
+      }
     }
-    else {
-      this.gameCounter--
-    }
+
   }
 
 }
