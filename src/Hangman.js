@@ -10,8 +10,8 @@ export class Hangman {
   }
 
   isAlreadyGuessed(letter) {
-    this.letterAlreadyGuessed = this.lettersGuessed.some(letter); 
-    return this.letterAlreadyGuessed;
+    this.letterAlreadyGuessed = this.lettersGuessed.includes(letter);
+
   }
 
   letterMatch(letter) {
@@ -46,10 +46,12 @@ export class Hangman {
       this.lettersGuessed.push(letter);
       if (this.letterMatch(letter)) {
         this.letterCorrect();
-        this.correctLetters++
+        this.correctLetters += 1
+        console.log(this.correctLetters);
       }
       else {
-        this.gameCounter--
+        this.gameCounter -= 1
+        console.log(this.gameCounter);
       }
     }
 
