@@ -1,12 +1,12 @@
 export class Hangman {
   constructor() {
-    this.word = this.getWord();
+    this.word;
     this.guesses = 0;
     this.blankArray;
-    this.wordInit = 0;
   }
   getDino() {
-    let workAround = this; //the other thing I need to return 
+    let workAround = this; //the other thing I need to return is too deep
+    let dinoWord;
     let dinoAsync = new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
       let url = 'http://dinoipsum.herokuapp.com/api/?format=text&paragraphs=1&words=1';
@@ -23,20 +23,15 @@ export class Hangman {
     });
 
     dinoAsync.then(function(response) {
-      let dinoWord = response;
-      workAround.wordInit = 1;
+      console.log(response);
+      dinoWord = response;
       let blankWait = new Array(dinoWord.length).fill("");
       workAround.blankArray = blankWait;
-      return dinoWord;
-
+      workAround.word = response;
     }, function(error) {
       $('.showErrors').text(`There was an error retrieving a random dino: ${error.message}`);
     });
-  }
-
-  getWord() {
-    return this.getDino();
-
+ 
   }
 
 }

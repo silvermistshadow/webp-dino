@@ -5,16 +5,20 @@
   </head>
   <body>
     <div class="container">
-      <div></div>
 
-      <form id="game">
+      <button class="btn btn-primary" id="start-button">Start</button>
+      <div id="the-hang" class="game"></div>
+      
+
+      <form id="game" class="game">
         <div class="form-group">
           <label for="guess">Guess letter:</label>
           <input type="text" id="guess" class="form-control" required>
         </div>
         <button type="submit" class="btn">Guess</button>
       </form>
-
+      <div id="word-blanks" class="game"></div>
+      <div id="wrong" class="game"></div>
     </div>
   </body>
 </html>

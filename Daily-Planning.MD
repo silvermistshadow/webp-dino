@@ -14,9 +14,9 @@
 
 1. class methods
 
-2. hell
+2. Async
 
-3. if I know
+3. css
 
 
 
