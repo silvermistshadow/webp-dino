@@ -4,7 +4,7 @@ export class Hangman {
     this.guesses = 0;
     this.blankArray;
   }
-  getDino() {
+  async getDino() {
     let workAround = this; //the other thing I need to return is too deep
     let dinoWord;
     let dinoAsync = new Promise(function(resolve, reject) {
@@ -28,10 +28,11 @@ export class Hangman {
       let blankWait = new Array(dinoWord.length).fill("");
       workAround.blankArray = blankWait;
       workAround.word = response;
+      return;
     }, function(error) {
       $('.showErrors').text(`There was an error retrieving a random dino: ${error.message}`);
     });
- 
+    
   }
 
 }
