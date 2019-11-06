@@ -23,9 +23,8 @@ export class Hangman {
     });
 
     dinoAsync.then(function(response) {
-      console.log(response);
       dinoWord = response;
-      let blankWait = new Array(dinoWord.length).fill("");
+      let blankWait = new Array(dinoWord.length).fill("_");
       workAround.blankArray = blankWait;
       workAround.word = response;
       return;
