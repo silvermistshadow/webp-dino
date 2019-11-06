@@ -11,11 +11,9 @@ _A game of Hangman with a randomly picked dinosaur as the word_
 Hangman specs:
 
   0. create and store a Hangman game object
-    input:   let hangman = new Hangman("Dino")
+    input:   let hangman = new Hangman()
     output: object
-  1. use letterMatch method to match a single letter in a word
-    input: "Dino", match 'o'
-    output: true
+
 
 ## Setup/Installation Requirements
 
@@ -29,7 +27,7 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_Doesn't work and will never work. Tried enough times._
 
 ## Support and contact details
 
