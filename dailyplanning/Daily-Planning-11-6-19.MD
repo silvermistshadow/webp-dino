@@ -1,6 +1,6 @@
 # Daily Planning Doc
 
-##### Date: 11-1-2019
+##### Date: 11-6-2019
 
 ## BEFORE BEGINNING WORK:
 
@@ -12,7 +12,7 @@
 
 #### Please list 3 concepts you are going to focus on today. (For example, css grids, html forms, string methods, etc.):
 
-1. class methods
+1. jquery
 
 2. Async
 
